@@ -1,0 +1,39 @@
+<h1>Tus favoritos</h1>
+
+
+<h1 class="centrado">Trabajo de itv provicias castilla y leon</h1>
+<button routerLink="">ver todos</button>
+
+
+
+<h1>Total de resultados {{totalResultados}}</h1>
+<div class="provincias">
+
+
+
+    <div class="provincia" *ngFor="let infoProvincia of favoritos">
+        <br>
+        <h2 class="centrado">{{infoProvincia.fields.nombre}}</h2>
+        <h3 class="centrado">Horario: {{infoProvincia.fields.horario_al_publico}}</h3>
+
+        <h2 class="centrado">Grupo empresarial: {{infoProvincia.fields.empresa}}</h2>
+
+        <div class="contacto">
+            <div class="telefono">
+                <h3><b>Telefono contacto:</b>{{infoProvincia.fields.telefonos}}</h3>
+            </div>
+        </div>
+        <div class="correo">
+            <h3>Correo electronico: {{infoProvincia.fields.correo_electronico}}</h3>
+        </div>
+
+
+        <h2 class="centrado">Drección: {{infoProvincia.fields.direccion}}</h2>
+        <h2 class="centrado">Codigo postal: {{infoProvincia.fields.codigo_postal}}</h2>
+
+        <button (click)="elimnarFavoritos(infoProvincia)">Eliminar a favoritos</button>
+       
+    </div>
+
+
+</div>

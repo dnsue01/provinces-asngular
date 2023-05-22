@@ -1,0 +1,45 @@
+<h1 class="centrado">Trabajo de itv provicias castilla y leon</h1>
+<button routerLink="favoritos">ver favoritos</button>
+
+<input type="text" name="bucadorProvincia" id="bucadorProvincia" placeholder="Introduce provincia ITv"
+    [(ngModel)]="palabraBuscada" (keyup)="buscarProvincia()">
+<select name="" id="" (change)="seleccionarPruebaDetalle($event)">
+    <option value="">Selecciona tipo itv</option>
+    <option *ngFor="let zonaConcesional of zonasConcesionales" value="{{ zonaConcesional }}">{{zonaConcesional}}
+    </option>
+</select>
+
+<h1>Total de resultados {{totalResultados}}</h1>
+<div class="provincias">
+
+
+    <div class="provincia" *ngFor="let infoProvincia of infoProvincias">
+        <br>
+        <h4 class="centrado">{{infoProvincia.fields.nombre}}</h4>
+        <h4 class="centrado">Horario: {{infoProvincia.fields.horario_al_publico}}</h4>
+
+        <h4 class="centrado">Grupo empresarial: {{infoProvincia.fields.empresa}}</h4>
+
+        <div class="contacto">
+            <div class="telefono">
+                <h4><b>Telefono contacto:</b>{{infoProvincia.fields.telefonos}}</h4>
+            </div>
+        </div>
+        <div class="correo">
+            <h4>Correo electronico: {{infoProvincia.fields.correo_electronico}}</h4>
+        </div>
+
+
+        <h4 class="centrado">Drección: {{infoProvincia.fields.direccion}}</h4>
+        <h4 class="centrado">Codigo postal: {{infoProvincia.fields.codigo_postal}}</h4>
+
+        <button *ngIf="!infoProvincia.isFavorito" (click)="anadirFavoritos(infoProvincia)">
+            Añadir a favoritos
+          </button>
+          
+    
+       
+    </div>
+
+
+</div>
