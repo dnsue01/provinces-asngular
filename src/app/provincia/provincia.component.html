@@ -1,0 +1,23 @@
+<div class="provincia">
+  <br />
+  <h4 class="centrado">{{ provincia.fields.nombre }}</h4>
+  <h4 class="centrado">Horario: {{ provincia.fields.horario_al_publico }}</h4>
+
+  <h4 class="centrado">Grupo empresarial: {{ provincia.fields.empresa }}</h4>
+
+  <div class="contacto">
+    <div class="telefono">
+      <h4><b>Telefono contacto:</b>{{ provincia.fields.telefonos }}</h4>
+    </div>
+  </div>
+  <div class="correo">
+    <h4>Correo electronico: {{ provincia.fields.correo_electronico }}</h4>
+  </div>
+
+  <h4 class="centrado">Drección: {{ provincia.fields.direccion }}</h4>
+  <h4 class="centrado">Codigo postal: {{ provincia.fields.codigo_postal }}</h4>
+
+  <button *ngIf="!provincia.isFavorito" (click)="anadirFavoritos(provincia)">
+    Añadir a favoritos
+  </button>
+</div>

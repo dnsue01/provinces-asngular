@@ -1,39 +1,37 @@
+<app-titulo></app-titulo>
+
 <h1>Tus favoritos</h1>
 
-
-<h1 class="centrado">Trabajo de itv provicias castilla y leon</h1>
 <button routerLink="">ver todos</button>
 
-
-
-<h1>Total de resultados {{totalResultados}}</h1>
+<app-total-resutados [totalResultados]="totalResultados"></app-total-resutados>
 <div class="provincias">
+  <div class="provincia" *ngFor="let infoProvincia of favoritos">
+    <h4 class="centrado">{{ infoProvincia.fields.nombre }}</h4>
+    <h4 class="centrado">
+      Horario: {{ infoProvincia.fields.horario_al_publico }}
+    </h4>
 
+    <h4 class="centrado">
+      Grupo empresarial: {{ infoProvincia.fields.empresa }}
+    </h4>
 
-
-    <div class="provincia" *ngFor="let infoProvincia of favoritos">
-        <br>
-        <h2 class="centrado">{{infoProvincia.fields.nombre}}</h2>
-        <h3 class="centrado">Horario: {{infoProvincia.fields.horario_al_publico}}</h3>
-
-        <h2 class="centrado">Grupo empresarial: {{infoProvincia.fields.empresa}}</h2>
-
-        <div class="contacto">
-            <div class="telefono">
-                <h3><b>Telefono contacto:</b>{{infoProvincia.fields.telefonos}}</h3>
-            </div>
-        </div>
-        <div class="correo">
-            <h3>Correo electronico: {{infoProvincia.fields.correo_electronico}}</h3>
-        </div>
-
-
-        <h2 class="centrado">Drección: {{infoProvincia.fields.direccion}}</h2>
-        <h2 class="centrado">Codigo postal: {{infoProvincia.fields.codigo_postal}}</h2>
-
-        <button (click)="elimnarFavoritos(infoProvincia)">Eliminar a favoritos</button>
-       
+    <div class="contacto">
+      <div class="telefono">
+        <h4><b>Telefono contacto:</b>{{ infoProvincia.fields.telefonos }}</h4>
+      </div>
+    </div>
+    <div class="correo">
+      <h4>Correo electronico: {{ infoProvincia.fields.correo_electronico }}</h4>
     </div>
 
+    <h4 class="centrado">Drección: {{ infoProvincia.fields.direccion }}</h4>
+    <h4 class="centrado">
+      Codigo postal: {{ infoProvincia.fields.codigo_postal }}
+    </h4>
 
+    <button (click)="elimnarFavoritos(infoProvincia)">
+      Eliminar a favoritos
+    </button>
+  </div>
 </div>

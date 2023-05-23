@@ -13,11 +13,17 @@ import { PrincipalComponent } from './principal/principal.component';
 //inputs 
 import { FormsModule } from '@angular/forms';
 import { FavoritosComponent } from './favoritos/favoritos.component';
+import { TotalResutadosComponent } from './total-resutados/total-resutados.component';
+import { ProvinciaComponent } from './provincia/provincia.component';
+import { TituloComponent } from './titulo/titulo.component';
 @NgModule({
   declarations: [
     AppComponent,
     PrincipalComponent,
-    FavoritosComponent
+    FavoritosComponent,
+    TotalResutadosComponent,
+    ProvinciaComponent,
+    TituloComponent
   ],
   imports: [
     BrowserModule,
